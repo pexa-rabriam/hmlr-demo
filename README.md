@@ -5,17 +5,22 @@ This is a repo for a demo HMLR Mock Server.
 - Docker
 
 ### Usage
-1. To start the wiremock server, run the command below at the root directory: 
+1. To start the wiremock server using `docker` , run the command below at the root directory: 
    ```shell script
    docker run -it --rm -p 8080:8080 -v $PWD/hmlr-mock-server/resources:/home/wiremock wiremock/wiremock:2.35.0 --verbose
    ```
-   
-2. Fetch wiremock mappings using Postman
+
+2. To start the wiremock server using `batect`, run the command below at the root directory:
+   ```shell script
+   ./batect run-hmlr-mock-server
+   ```
+
+3. Fetch wiremock mappings using Postman
    ```shell script
    GET http://localhost:8080/__admin/mappings
    ```
 
-3. Use Postman to invoke the Search By Property Description service using the request that returns a successful response:
+4. Use Postman to invoke the Search By Property Description service using the request that returns a successful response:
    ```shell script
    POST http://localhost:8080/hmlr-mock/b2b/ECBG_StubService/EnquiryByPropertyDescriptionV2_0WebService
    ```
