@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns3:searchPropertiesResponse xmlns:ns2="http://www.oscre.org/ns/eReg-Final/2011/RequestSearchByPropertyDescriptionV2_0" xmlns:ns3="http://epdv2_0.ws.bg.lr.gov/" xmlns:ns4="http://www.oscre.org/ns/eReg-Final/2011/ResponseSearchByPropertyDescriptionV2_0">
+            <return>
+                <ns4:GatewayResponse>
+                    <ns4:TypeCode>30</ns4:TypeCode>
+                    <ns4:Results>
+                        <ns4:ExternalReference>
+                            <ns4:Reference>Ref 1231</ns4:Reference>
+                        </ns4:ExternalReference>
+                        <ns4:Title>
+                            <ns4:TitleNumber>ST500681</ns4:TitleNumber>
+                            <ns4:TenureInformation>
+                                <ns4:TenureTypeCode>20</ns4:TenureTypeCode>
+                            </ns4:TenureInformation>
+                            <ns4:Address>
+                                <ns4:BuildingNumber>99</ns4:BuildingNumber>
+                                <ns4:StreetName>FLAKE AVENUE</ns4:StreetName>
+                                <ns4:CityName>TORQUAY</ns4:CityName>
+                                <ns4:PostcodeZone>
+                                    <ns4:Postcode>TQ56 4HY</ns4:Postcode>
+                                </ns4:PostcodeZone>
+                            </ns4:Address>
+                        </ns4:Title>
+                    </ns4:Results>
+                </ns4:GatewayResponse>
+            </return>
+        </ns3:searchPropertiesResponse>
+    </soap:Body>
+</soap:Envelope>

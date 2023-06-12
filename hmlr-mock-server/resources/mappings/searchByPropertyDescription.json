@@ -1,0 +1,29 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "Valid SearchByPropertyDescription request",
+      "priority": 3,
+      "request": {
+        "urlPath": "/hmlr-mock/b2b/ECBG_StubService/EnquiryByPropertyDescriptionV2_0WebService",
+        "method": "ANY",
+        "bodyPatterns": [
+          {
+            "matchesXPath": "//*[//*[wsse:UsernameToken[wsse:Username and wsse:Password]] and //*[ns:PostcodeZone[text()='TQ56 4HY']]]",
+            "xPathNamespaces": {
+              "soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+              "wsse": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+              "ns": "http://www.oscre.org/ns/eReg-Final/2011/RequestSearchByPropertyDescriptionV2_0"
+            }
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/xml"
+        },
+        "bodyFileName": "responseWithTypeCode30.xml"
+      }
+    }
+  ]
+}
