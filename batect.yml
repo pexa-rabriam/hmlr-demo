@@ -14,8 +14,27 @@ containers:
         options: cached
     command: --global-response-templating --verbose --port=8080 --no-request-journal --disable-gzip
 
+  docker-env:
+    image: docker:20.10.5
+    volumes:
+      - local: .
+        container: /app
+        options: cached
+      - local: /var/run/docker.sock
+        container: /var/run/docker.sock
+    working_directory: /app
+
 tasks:
   run-hmlr-mock-server:
     description: Runs HMLR mock server
     run:
       container: hmlr-mock-server
+
+  build-hmlr-mock-server-image:
+    description: Builds hmlr mock server docker image with tag value of DOCKER_TAG (Default- hmlr-mock-server:latest)
+    run:
+      container: docker-env
+      command: sh -c 'docker build -f hmlr-mock-server.Dockerfile -t $DOCKER_TAG .'
+      environment:
+        DOCKER_BUILDKIT: 1
+        DOCKER_TAG: ${DOCKER_TAG:-hmlr-mock-server:latest}
